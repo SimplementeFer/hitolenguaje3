@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API del Tiempo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>El tiempo en Madrid</h1>
+
+
+<div class="weather-container">
+    <div class="weather-icon">
+        <img id="weather-icon" src="weather.png" alt="Weather Icon" width="100px">
+    </div>
+    <h1>Humanes</h1>
+    <table id="weekday">
+    <thead>
+        <th>Día de la semana</th>
+    </thead>            
+    <tr>
+        <td>Lunes</td>
+    </tr>
+    <tr>
+        <td>Martes</td>
+    </tr>
+    <tr>
+        <td>Miércoles</td>
+    </tr>
+    <tr>
+        <td>Jueves</td>
+    </tr>
+    <tr>
+        <td>Viernes</td>
+    </tr>
+    <tr>
+        <td>Sábado</td>
+    </tr>
+    <tr>
+        <td>Domingo</td>
+    </tr></table>
+    <table>
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Temperatura</th>
+            <th>Probabilidad de precipitaciones (%)</th>
+        </tr>
+        </thead>
+        <tbody id="weather-data-humanes">
+        </tbody>
+    </table>
+    <script>
+        // Código JavaScript para realizar la petición Fetch al API y mostrar los datos en la tabla
+
+    // Realizar la petición Fetch al API
+    fetch('https://www.el-tiempo.net/api/json/v1/provincias/28/municipios/28073/weather')
+        .then(response => response.json())
+        .then(data => {
+        const weatherData = data.prediccion.dia;
+
+        // Obtener la referencia del tbody en la tabla
+        const tbody = document.getElementById('weather-data-humanes');
+
+        // Recorrer los datos y crear las filas de la tabla
+        weatherData.forEach(item => {
+            const row = document.createElement('tr');
+
+            const dateCell = document.createElement('td');
+            dateCell.textContent = item['@attributes'].fecha;
+            row.appendChild(dateCell);
+
+            const temperatureCell = document.createElement('td');
+            temperatureCell.textContent = item.temperatura.maxima + '°C / ' + item.temperatura.minima + '°C';
+            row.appendChild(temperatureCell);
+
+            const precipitationCell = document.createElement('td');
+            precipitationCell.textContent = item.prob_precipitacion;
+
+            
+
+            row.appendChild(precipitationCell);
+
+
+            tbody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        // Manejo de errores en caso de que la petición falle
+        console.error('Error:', error);
+    });
+    </script>
+</div>
+
+<div class="weather-container">
+    <div class="weather-icon">
+        <img id="weather-icon" src="weather.png" alt="Weather Icon" width="100px">
+    </div>
+    <h1>Fuenlabrada</h1>
+    <table id="weekday">
+    <thead>
+        <th>Día de la semana</th>
+    </thead>            
+    <tr>
+        <td>Lunes</td>
+    </tr>
+    <tr>
+        <td>Martes</td>
+    </tr>
+    <tr>
+        <td>Miércoles</td>
+    </tr>
+    <tr>
+        <td>Jueves</td>
+    </tr>
+    <tr>
+        <td>Viernes</td>
+    </tr>
+    <tr>
+        <td>Sábado</td>
+    </tr>
+    <tr>
+        <td>Domingo</td>
+    </tr></table>
+    <table>
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Temperatura</th>
+            <th>Probabilidad de precipitaciones (%)</th>
+        </tr>
+        </thead>
+        <tbody id="weather-data-fuenlabrada">
+        </tbody>
+    </table>
+    <script>
+        // Código JavaScript para realizar la petición Fetch al API y mostrar los datos en la tabla
+
+    // Realizar la petición Fetch al API
+    fetch('https://www.el-tiempo.net/api/json/v1/provincias/28/municipios/28058/weather')
+        .then(response => response.json())
+        .then(data => {
+        const weatherData = data.prediccion.dia;
+
+        // Obtener la referencia del tbody en la tabla
+        const tbody = document.getElementById('weather-data-fuenlabrada');
+
+        // Recorrer los datos y crear las filas de la tabla
+        weatherData.forEach(item => {
+            const row = document.createElement('tr');
+
+            const dateCell = document.createElement('td');
+            dateCell.textContent = item['@attributes'].fecha;
+            row.appendChild(dateCell);
+
+            const temperatureCell = document.createElement('td');
+            temperatureCell.textContent = item.temperatura.maxima + '°C / ' + item.temperatura.minima + '°C';
+            row.appendChild(temperatureCell);
+
+            const precipitationCell = document.createElement('td');
+            precipitationCell.textContent = item.prob_precipitacion;
+
+            
+
+            row.appendChild(precipitationCell);
+
+
+            tbody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        // Manejo de errores en caso de que la petición falle
+        console.error('Error:', error);
+    });
+    </script>
+</div>
+
+
+
+
+<div class="weather-container">
+    <div class="weather-icon">
+        <img id="weather-icon" src="weather.png" alt="Weather Icon" width="100px">
+    </div>
+    <h1>Cercedilla</h1>
+    <table id="weekday">
+    <thead>
+        <th>Día de la semana</th>
+    </thead>            
+    <tr>
+        <td>Lunes</td>
+    </tr>
+    <tr>
+        <td>Martes</td>
+    </tr>
+    <tr>
+        <td>Miércoles</td>
+    </tr>
+    <tr>
+        <td>Jueves</td>
+    </tr>
+    <tr>
+        <td>Viernes</td>
+    </tr>
+    <tr>
+        <td>Sábado</td>
+    </tr>
+    <tr>
+        <td>Domingo</td>
+    </tr></table>
+    <table>
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Temperatura</th>
+            <th>Probabilidad de precipitaciones (%)</th>
+        </tr>
+        </thead>
+        <tbody id="weather-data-cercedilla">
+        </tbody>
+    </table>
+    <script>
+        // Código JavaScript para realizar la petición Fetch al API y mostrar los datos en la tabla
+
+    // Realizar la petición Fetch al API
+    fetch('https://www.el-tiempo.net/api/json/v1/provincias/28/municipios/28038/weather')
+        .then(response => response.json())
+        .then(data => {
+        const weatherData = data.prediccion.dia;
+
+        // Obtener la referencia del tbody en la tabla
+        const tbody = document.getElementById('weather-data-cercedilla');
+
+        // Recorrer los datos y crear las filas de la tabla
+        weatherData.forEach(item => {
+            const row = document.createElement('tr');
+
+            const dateCell = document.createElement('td');
+            dateCell.textContent = item['@attributes'].fecha;
+            row.appendChild(dateCell);
+
+            const temperatureCell = document.createElement('td');
+            temperatureCell.textContent = item.temperatura.maxima + '°C / ' + item.temperatura.minima + '°C';
+            row.appendChild(temperatureCell);
+
+            const precipitationCell = document.createElement('td');
+            precipitationCell.textContent = item.prob_precipitacion;
+
+            
+
+            row.appendChild(precipitationCell);
+
+
+            tbody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        // Manejo de errores en caso de que la petición falle
+        console.error('Error:', error);
+    });
+    </script>
+</div>
+
+
+
+
+
+<div class="weather-container">
+    <div class="weather-icon">
+        <img id="weather-icon" src="weather.png" alt="Weather Icon" width="100px">
+    </div>
+    <h1>Navacerrada </h1>
+    <table id="weekday">
+    <thead>
+        <th>Día de la semana</th>
+    </thead>            
+    <tr>
+        <td>Lunes</td>
+    </tr>
+    <tr>
+        <td>Martes</td>
+    </tr>
+    <tr>
+        <td>Miércoles</td>
+    </tr>
+    <tr>
+        <td>Jueves</td>
+    </tr>
+    <tr>
+        <td>Viernes</td>
+    </tr>
+    <tr>
+        <td>Sábado</td>
+    </tr>
+    <tr>
+        <td>Domingo</td>
+    </tr></table>
+    <table>
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Temperatura</th>
+            <th>Probabilidad de precipitaciones (%)</th>
+        </tr>
+        </thead>
+        <tbody id="weather-data-navacerrada">
+        </tbody>
+    </table>
+    <script>
+        // Código JavaScript para realizar la petición Fetch al API y mostrar los datos en la tabla
+
+    // Realizar la petición Fetch al API
+    fetch('https://www.el-tiempo.net/api/json/v1/provincias/28/municipios/28093/weather')
+        .then(response => response.json())
+        .then(data => {
+        const weatherData = data.prediccion.dia;
+
+        // Obtener la referencia del tbody en la tabla
+        const tbody = document.getElementById('weather-data-navacerrada');
+
+        // Recorrer los datos y crear las filas de la tabla
+        weatherData.forEach(item => {
+            const row = document.createElement('tr');
+
+            const dateCell = document.createElement('td');
+            dateCell.textContent = item['@attributes'].fecha;
+            row.appendChild(dateCell);
+
+            const temperatureCell = document.createElement('td');
+            temperatureCell.textContent = item.temperatura.maxima + '°C / ' + item.temperatura.minima + '°C';
+            row.appendChild(temperatureCell);
+
+            const precipitationCell = document.createElement('td');
+            precipitationCell.textContent = item.prob_precipitacion;
+
+            
+
+            row.appendChild(precipitationCell);
+
+
+            tbody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        // Manejo de errores en caso de que la petición falle
+        console.error('Error:', error);
+    });
+    </script>
+</div>
+
+
+<div class="weather-container">
+    <div class="weather-icon">
+        <img id="weather-icon" src="weather.png" alt="Weather Icon" width="100px">
+    </div>
+    <h1>Tres Cantos </h1>
+    <table id="weekday">
+    <thead>
+        <th>Día de la semana</th>
+    </thead>            
+    <tr>
+        <td>Lunes</td>
+    </tr>
+    <tr>
+        <td>Martes</td>
+    </tr>
+    <tr>
+        <td>Miércoles</td>
+    </tr>
+    <tr>
+        <td>Jueves</td>
+    </tr>
+    <tr>
+        <td>Viernes</td>
+    </tr>
+    <tr>
+        <td>Sábado</td>
+    </tr>
+    <tr>
+        <td>Domingo</td>
+    </tr></table>
+    <table>
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Temperatura</th>
+            <th>Probabilidad de precipitaciones (%)</th>
+        </tr>
+        </thead>
+        <tbody id="weather-data-trescantos">
+        </tbody>
+    </table>
+    <script>
+        // Código JavaScript para realizar la petición Fetch al API y mostrar los datos en la tabla
+
+    // Realizar la petición Fetch al API
+    fetch('https://www.el-tiempo.net/api/json/v1/provincias/28/municipios/28903/weather')
+        .then(response => response.json())
+        .then(data => {
+        const weatherData = data.prediccion.dia;
+
+        // Obtener la referencia del tbody en la tabla
+        const tbody = document.getElementById('weather-data-trescantos');
+
+        // Recorrer los datos y crear las filas de la tabla
+        weatherData.forEach(item => {
+            const row = document.createElement('tr');
+
+            const dateCell = document.createElement('td');
+            dateCell.textContent = item['@attributes'].fecha;
+            row.appendChild(dateCell);
+
+            const temperatureCell = document.createElement('td');
+            temperatureCell.textContent = item.temperatura.maxima + '°C / ' + item.temperatura.minima + '°C';
+            row.appendChild(temperatureCell);
+
+            const precipitationCell = document.createElement('td');
+            precipitationCell.textContent = item.prob_precipitacion;
+
+            
+
+            row.appendChild(precipitationCell);
+
+
+            tbody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        // Manejo de errores en caso de que la petición falle
+        console.error('Error:', error);
+    });
+    </script>
+</div>
+
+</body>
+</html>
